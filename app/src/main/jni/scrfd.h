@@ -17,7 +17,7 @@
 
 #include <opencv2/core/core.hpp>
 
-#include <net.h>
+#include <ncnn/net.h>
 
 struct FaceObject
 {

@@ -18,8 +18,6 @@
 #include <opencv2/core/core.hpp>
 #include <opencv2/imgproc/imgproc.hpp>
 
-#include "cpu.h"
-
 static inline float intersection_area(const FaceObject& a, const FaceObject& b)
 {
     cv::Rect_<float> inter = a.rect & b.rect;
@@ -229,8 +227,8 @@ int SCRFD::load(const char* modeltype, bool use_gpu)
 {
     scrfd.clear();
 
-    ncnn::set_cpu_powersave(2);
-    ncnn::set_omp_num_threads(ncnn::get_big_cpu_count());
+    //ncnn::set_cpu_powersave(2);
+  //  ncnn::set_omp_num_threads(ncnn::get_big_cpu_count());
 
     scrfd.opt = ncnn::Option();
 
@@ -238,7 +236,7 @@ int SCRFD::load(const char* modeltype, bool use_gpu)
     scrfd.opt.use_vulkan_compute = use_gpu;
 #endif
 
-    scrfd.opt.num_threads = ncnn::get_big_cpu_count();
+    //scrfd.opt.num_threads = ncnn::get_big_cpu_count();
 
     char parampath[256];
     char modelpath[256];
@@ -257,8 +255,8 @@ int SCRFD::load(AAssetManager* mgr, const char* modeltype, bool use_gpu)
 {
     scrfd.clear();
 
-    ncnn::set_cpu_powersave(2);
-    ncnn::set_omp_num_threads(ncnn::get_big_cpu_count());
+    //ncnn::set_cpu_powersave(2);
+   // ncnn::set_omp_num_threads(ncnn::get_big_cpu_count());
 
     scrfd.opt = ncnn::Option();
 
@@ -266,7 +264,7 @@ int SCRFD::load(AAssetManager* mgr, const char* modeltype, bool use_gpu)
     scrfd.opt.use_vulkan_compute = use_gpu;
 #endif
 
-    scrfd.opt.num_threads = ncnn::get_big_cpu_count();
+   // scrfd.opt.num_threads = ncnn::get_big_cpu_count();
 
     char parampath[256];
     char modelpath[256];

@@ -23,8 +23,8 @@
 #include <string>
 #include <vector>
 
-#include <platform.h>
-#include <benchmark.h>
+#include <ncnn/platform.h>
+#include <ncnn/benchmark.h>
 
 #include "scrfd.h"
 
@@ -200,7 +200,7 @@ JNIEXPORT jboolean JNICALL Java_com_tencent_scrfdncnn_SCRFDNcnn_loadModel(JNIEnv
     {
         ncnn::MutexLockGuard g(lock);
 
-        if (use_gpu && ncnn::get_gpu_count() == 0)
+        if (use_gpu )
         {
             // no gpu
             delete g_scrfd;
