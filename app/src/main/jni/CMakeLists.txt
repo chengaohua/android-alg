@@ -14,9 +14,9 @@ message("------------>${CMAKE_SOURCE_DIR}")
 
 set(OPENCV_LIBS opencv_core opencv_highgui opencv_imgproc opencv_photo opencv_video opencv_features2d)
 
-add_library(scrfdncnn SHARED scrfdncnn.cpp scrfd.cpp ndkcamera.cpp)
+add_library(scrfdncnn SHARED scrfdncnn.cpp scrfd.cpp ndkcamera.cpp extractImpl.cpp general.cpp imgpreproc.cpp)
 
 
-target_link_libraries(scrfdncnn ncnn ${OPENCV_LIBS} camera2ndk mediandk  jnigraphics
+target_link_libraries(scrfdncnn ncnn  MNN ${OPENCV_LIBS} camera2ndk mediandk  jnigraphics
         z
         ${log-lib}  android)
