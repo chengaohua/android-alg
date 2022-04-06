@@ -1,6 +1,10 @@
 # ncnn-android-scrfd
 
+
+
 The SCRFD face detection
+
+r17c 
 
 This is a sample ncnn android project, it depends on ncnn library and opencv
 
@@ -37,3 +41,7 @@ https://github.com/nihui/opencv-mobile
 ## screenshot
 ![](screenshot.jpg)
 
+
+## depends
+
+MNN 1.2.0
